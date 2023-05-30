@@ -78,4 +78,8 @@ $(() => {
     $('.box').show(2000).delay(1000);
   });
 
+  // animation sur les titres "h2"et ".content"s
+
+  $('h1,h2').hide(2000).show(2000).delay(1000);
+  $('.content').fadeOut('slow');
 });
