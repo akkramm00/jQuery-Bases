@@ -1,15 +1,14 @@
 $(() => {
-    alert('jQuery est bien configuré !')
 
-//Dupliquons le contenu de #introduction pour l'insérer dans #introduction-copy.
+  //Dupliquons le contenu de #introduction pour l'insérer dans #introduction-copy.
 
  $('#introduction-copy').html($('#introduction').html())
 
-//Initialisez la liste d'éléments #goals grâce aux valeurs suivantes :
-// Récupérer le code HTML
-// Modifier le CSS
-// Parcourir une liste d'éléments
-// Associer des données à un élément
+  //Initialisez la liste d'éléments #goals grâce aux valeurs suivantes :
+  // Récupérer le code HTML
+  // Modifier le CSS
+  // Parcourir une liste d'éléments
+  // Associer des données à un élément
 
 
     let element = $( "#goals" )
@@ -23,8 +22,38 @@ $(() => {
   
     $('#goals li').each(function(index) {
       $(this).text($.data( element, "goals" )[index])
-    })
+    });
+
+  // ajoutons un message qui, avec le click sur le bouton "submit" s'affiche pour 
+  // remercier le client d'avoir valider la saisie:
+  $('#contact-form').prepend('<h2>Formulaire d\'inscription</h2>');
+  $('section h2').css({
+    'color' : 'green',
+    'font-style': 'italic',
   
-  
+  });
+
+  $('#contact-form').submit((e) => {
+    e.preventDefault();
+  }); // script permettant d'annuler la validation par defaut
+
+  $('#send-data').click(() => {
+    $('#contact-form').append('<p>Merci pour votre saisie !</p>').css({
+      'color' : 'grey',
+      'background' :'lightyellow',
+      'border' : '1px solid black',
+      'border-radius' : '10px',
+      'padding' : '15px'
+    }) //opération ciblage de form
+
+  });
+
+  // pour pouvoir supprimer le message de remerciment,on va cilber le bouton reset
+   // puis lui appliquer la method remove()
+  $('#reset-data').click(() => {
+    $('#contact-form p').remove();
+    
+    
+  })
 
 });
