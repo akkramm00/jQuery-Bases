@@ -57,9 +57,14 @@ $(() => {
 
   // Lorsque'un utilisateur saisit un commentaire,la valeur de la texte doit se retrouver 
   // dupliquée dans le paragraphe #commentValue au fil de la saisie de l'utilisateur.
+  
+  // on utilise la method .keyup()
 
   $('#comment').keyup(function () {
     $('#commentValue').html($(this).val())
   });
+
+  // animation 
+  $('#content').hide(2000).delay(1000).show(2000).hide(2000);
 
 });
