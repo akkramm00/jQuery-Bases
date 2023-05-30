@@ -64,7 +64,18 @@ $(() => {
     $('#commentValue').html($(this).val())
   });
 
-  // animation 
+  // animation avec hide() show() :
+
   $('#content').hide(2000).delay(1000).show(2000).hide(2000);
+
+  //script permettant de masquer et ou afficher la boite "box" :
+
+  $('#hide-box').click(() =>{    
+    $('.box').hide(2000).delay(1000);
+  });
+
+  $('#show-box').click(() =>{    
+    $('.box').show(2000).delay(1000);
+  });
 
 });
