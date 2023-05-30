@@ -48,12 +48,18 @@ $(() => {
 
   });
 
-  // pour pouvoir supprimer le message de remerciment,on va cilber le bouton reset
+  // pour pouvoir supprimer le message de remerciment = "p",on va cilber le bouton reset
    // puis lui appliquer la method remove()
   $('#reset-data').click(() => {
     $('#contact-form p').remove();
     
-    
   })
+
+  // Lorsque'un utilisateur saisit un commentaire,la valeur de la texte doit se retrouver 
+  // dupliquée dans le paragraphe #commentValue au fil de la saisie de l'utilisateur.
+
+  $('#comment').keyup(function () {
+    $('#commentValue').html($(this).val())
+  });
 
 });
